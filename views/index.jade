@@ -15,11 +15,19 @@ html(lang='en')
     link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
     // Theme CSS
     link(href='/stylesheets/grayscale.min.css', rel='stylesheet')
+    //variables
+    - var status = weather
     //styles
-    style.
-      .intro {
-      background: url(../images/rain.jpg) no-repeat bottom center scroll;
-      }
+    if status == "rain"
+      style.
+        .intro {
+          background: url(../images/rain.jpg) no-repeat bottom center scroll;
+        }
+    if status == "clear"
+      style.
+        .intro {
+          background: url(../images/clear.jpg) no-repeat bottom center scroll;
+        }
   body#page-top(data-spy='scroll', data-target='.navbar-fixed-top')
     // Navigation
     nav.navbar.navbar-custom.navbar-fixed-top(role='navigation')
@@ -50,18 +58,16 @@ html(lang='en')
         .container
           .row
             .col-md-8.col-md-offset-2
-              h1.brand-heading Grayscale
+              h1.brand-heading WebApp
               p.intro-text
-                | A free, responsive, one page Bootstrap theme.
-                br
-                | Created by Start Bootstrap.
+                | The weather in your area is #{status}
               a.btn.btn-circle.page-scroll(href='#about')
                 i.fa.fa-play.animated
     // About Section
     section#about.container.content-section.text-center
       .row
         .col-lg-8.col-lg-offset-2
-          h2 About Grayscale
+          h2 Your IP address is #{ip}
           p
             | Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on
             a(href='http://startbootstrap.com/template-overviews/grayscale/') the preview page

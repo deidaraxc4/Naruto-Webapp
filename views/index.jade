@@ -68,6 +68,10 @@ html(lang='en')
       .row
         .col-lg-8.col-lg-offset-2
           h2 Your IP address is #{ip}
+          audio#audio(src='/sounds/Wind.mp3')
+          a.btn.btn-default.btn-lg#musicBtn(onclick="document.getElementById('audio').play()")
+            span.network-name Play
+          button(onclick="document.getElementById('audio').play()") test btn
           p
             | Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on
             a(href='http://startbootstrap.com/template-overviews/grayscale/') the preview page
@@ -97,7 +101,7 @@ html(lang='en')
       .container.text-center
         p Copyright © Nick Tang 2017
     // jQuery
-    script(src='vendor/jquery/jquery.js')
+    script(src='/public/jquery/src/jquery.js')
     // Bootstrap Core JavaScript
     script(src='/bootstrap/js/bootstrap.min.js')
     // Plugin JavaScript
@@ -106,3 +110,4 @@ html(lang='en')
     script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false')
     // Theme JavaScript
     script(src='javascripts/grayscale.min.js')
+    // Music JavaScript

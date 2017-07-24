@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var fs = require('fs');
 
 var app = express();
 
@@ -18,7 +19,7 @@ app.set('view options', {
 });
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'naruto.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,6 +34,22 @@ app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
+});
+
+//define route music to create readstream to requested file
+app.get('/sounds', function(req, res) {
+  var fileID = req.query.id;
+  var file = __dirname+ '/sounds/' +fileID;
+  fs.exists(file,function(exists) {
+    if(exists) {
+      var rstream = fs.createReadStream(file);
+      rstream.pipe(res);
+    }
+    else {
+      res.send("404 error");
+      res.end();
+    }
+  });
 });
 
 // error handler

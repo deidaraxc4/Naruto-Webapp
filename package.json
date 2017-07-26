@@ -1,7 +1,11 @@
 {
   "name": "narutoapp",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
+  "main": "app.js",
+  "engines": {
+    "node": "8.1.2"
+  },
   "scripts": {
     "start": "node ./bin/www"
   },

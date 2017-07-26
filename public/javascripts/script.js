@@ -37,7 +37,10 @@ if (condition == "Clear") {
 } else if (condition == "Snow") {
   myBackground.style.backgroundImage = "url('../images/snow.jpg')";
   myMusic.src='/sounds/SadnessSorrow.mp3';
-} else {
+} else if (condition == "Mostly Cloudy") {
+  myBackground.style.backgroundImage = "url('../images/cloudy.jpg')";
+  myMusic.src='/sounds/Go.mp3';
+} else if (city == ""){
   myStatus.innerHTML = "Oops, something went wrong we couldn't get your location";
 }
     }

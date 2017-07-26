@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 $.ajax({
-url : "http://api.wunderground.com/api/907ae4a3425c97d7/geolookup/conditions/q/autoip.json",
+url : "https://api.wunderground.com/api/907ae4a3425c97d7/geolookup/conditions/q/autoip.json",
 dataType : "jsonp",
 success : function(parsed_json) {
 var city = parsed_json['location']['city'];
